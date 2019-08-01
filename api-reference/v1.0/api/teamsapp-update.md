@@ -42,7 +42,7 @@ PUT /appCatalogs/teamsApps/{id}
 
 ## Request body
 
-Teams Zip Manifest Payload: For Teams application zip file [see Create an app package](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/apps/apps-package)
+Teams Zip Manifest Payload: For Teams application zip file [see Create an app package](https://docs.microsoft.com/microsoftteams/platform/concepts/apps/apps-package)
 
 >**Note:** Use the ID returned from the [List published apps](./teamsapp-list.md) call for to reference the app you'd like to update. 
 Do not use the ID from the manifest of the zip app package.
@@ -65,7 +65,7 @@ Content-length: 244
 [Zip file containing a Teams app package]
 ```
 
-For Teams application zip file [see Create app package](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/apps/apps-package)
+For Teams application zip file [see Create app package](https://docs.microsoft.com/microsoftteams/platform/concepts/apps/apps-package)
 
 ### Response
 
