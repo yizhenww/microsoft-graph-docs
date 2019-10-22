@@ -175,6 +175,8 @@
           href: api/user-update.md
         - name: Delete user
           href: api/user-delete.md
+        - name: Check member objects
+          href: api/user-checkmemberobjects.md
         - name: Get delta
           href: api/user-delta.md
       - name: Calendar
@@ -340,6 +342,8 @@
           href: api/group-post-owners.md
         - name: Check member groups
           href: api/group-checkmembergroups.md
+        - name: Check member objects
+          href: api/group-checkmemberobjects.md
         - name: Create group
           href: api/group-post-groups.md
         - name: Delete group
@@ -3259,6 +3263,8 @@
           href: api/device-list-memberof.md
         - name: List device transitive groups
           href: api/device-list-transitivememberof.md
+        - name: Check member objects
+          href: api/device-checkmemberobjects.md
       - name: Directory object
         href: resources/directoryobject.md
         items:
