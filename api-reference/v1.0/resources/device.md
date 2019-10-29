@@ -1,6 +1,6 @@
 ---
 title: "device resource type"
-description: "Represents a device registered in the organization. Devices are created in the cloud using the Device Registration Service or by Intune. They're used by conditional access policies for multi-factor authentication. These devices can range from desktop and laptop machines to phones and tablets. Inherits from directoryObject."
+description: "Represents a device registered in the organization."
 localization_priority: Normal
 author: "davidmu1"
 ms.prod: "microsoft-identity-platform"
@@ -54,7 +54,7 @@ This resource lets you add your own data to custom properties using [extensions]
 |physicalIds|String collection| For interal use only. Not nullable. |
 |profileType|String|The profile type of the device. Possible values:<br />**RegisteredDevice** (default)<br />**SecureVM**<br />**Printer**<br />**Shared**<br />**IoT**|
 |systemLabels|String collection| List of labels applied to the device by the system. |
-|trustType|String| Type of trust for the joined device. Read-only. Possible values: <br />**Workplace** - indicates *bring your own personal devices*<br />**AzureAd** - Cloud only joined devices<br />**ServerAd** - on-premises domain joined devices joined to Azure AD. For more details, see [Introduction to device management in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/device-management-introduction) |
+|trustType|String| Type of trust for the joined device. Read-only. Possible values: <br />**Workplace** - indicates *bring your own personal devices*<br />**AzureAd** - Cloud only joined devices<br />**ServerAd** - on-premises domain joined devices joined to Azure AD. For more details, see [Introduction to device management in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/device-management-introduction) |
 
 ## Relationships
 | Relationship | Type	|Description|
