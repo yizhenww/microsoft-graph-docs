@@ -7362,16 +7362,14 @@
         - name: Device management derived credential settings
           href: resources/intune-shared-devicemanagementderivedcredentialsettings.md
           items:
-          - name: Get
-            href: api/intune-shared-devicemanagementderivedcredentialsettings-get.md
-          - name: Update
-            href: api/intune-shared-devicemanagementderivedcredentialsettings-update.md
           - name: List
             href: api/intune-shared-devicemanagementderivedcredentialsettings-list.md
-          - name: deviceManagementDerivedCredentialSettings](../resources/intune-shared-devicemanagementderivedcredentialsettings.md)|Create
-            href: api/intune-shared-devicemanagementderivedcredentialsettings.md
+          - name: Get
+            href: api/intune-shared-devicemanagementderivedcredentialsettings-get.md
           - name: Delete
             href: api/intune-shared-devicemanagementderivedcredentialsettings-delete.md
+          - name: Update
+            href: api/intune-shared-devicemanagementderivedcredentialsettings-update.md
         - name: Device management script
           href: resources/intune-shared-devicemanagementscript.md
           items:
