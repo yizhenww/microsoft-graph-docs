@@ -63,7 +63,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 2360
+Content-Length: 2438
 
 {
   "value": {
@@ -110,6 +110,8 @@ Content-Length: 2360
     "blockSyncingRecentlyUsedEmailAddresses": true,
     "durationOfEmailToSync": "oneDay",
     "emailAddressSource": "primarySmtpAddress",
+    "easServices": "calendars",
+    "easServicesUserOverrideEnabled": true,
     "hostName": "Host Name value",
     "requireSmime": true,
     "smimeEnablePerMessageSwitch": true,
@@ -126,7 +128,6 @@ Content-Length: 2360
   }
 }
 ```
-
 
 
 

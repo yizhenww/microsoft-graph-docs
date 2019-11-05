@@ -62,7 +62,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 1145
+Content-Length: 1187
 
 {
   "value": {
@@ -86,11 +86,11 @@ Content-Length: 1145
     "skuNumber": "Sku Number value",
     "systemFamily": "System Family value",
     "azureActiveDirectoryDeviceId": "Azure Active Directory Device Id value",
-    "managedDeviceId": "Managed Device Id value"
+    "managedDeviceId": "Managed Device Id value",
+    "displayName": "Display Name value"
   }
 }
 ```
-
 
 
 

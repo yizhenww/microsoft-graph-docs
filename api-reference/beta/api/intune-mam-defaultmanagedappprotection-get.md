@@ -61,7 +61,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 4525
+Content-Length: 4606
 
 {
   "value": {
@@ -111,6 +111,7 @@ Content-Length: 4525
     "allowedOutboundClipboardSharingExceptionLength": 14,
     "notificationRestriction": "blockOrganizationalData",
     "previousPinBlockCount": 5,
+    "managedBrowser": "microsoftEdge",
     "maximumAllowedDeviceThreatLevel": "secured",
     "mobileThreatDefenseRemediationAction": "wipe",
     "appDataEncryptionType": "afterDeviceRestart",
@@ -149,6 +150,7 @@ Content-Length: 4525
     "appActionIfIosDeviceModelNotAllowed": "wipe",
     "allowedAndroidDeviceManufacturers": "Allowed Android Device Manufacturers value",
     "appActionIfAndroidDeviceManufacturerNotAllowed": "wipe",
+    "thirdPartyKeyboardsBlocked": true,
     "filterOpenInToOnlyManagedApps": true,
     "disableProtectionOfManagedOutboundOpenInData": true,
     "protectInboundDataFromUnknownSources": true,
@@ -165,7 +167,6 @@ Content-Length: 4525
   }
 }
 ```
-
 
 
 
