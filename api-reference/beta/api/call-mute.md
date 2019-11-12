@@ -1,32 +1,32 @@
 ---
-title: "call: mute"
-description: "Allows the application to mute itself."
+title: "participant: muteAll"
+description: "Mute all participants in the call."
 author: "VinodRavichandran"
 localization_priority: Normal
 ms.prod: "cloud-communications"
 doc_type: apiPageType
 ---
 
-# call: mute
+# participant: muteAll
 
 [!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
 
-Allows the application to mute itself.
+Mute all participants in the call.
 
 ## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
 | Permission type                        | Permissions (from least to most privileged) |
 |:---------------------------------------|:--------------------------------------------|
-| Delegated (work or school account)     | Not Supported.                               |
-| Delegated (personal Microsoft account) | Not Supported.                               |
-| Application                            | None.                                        |
+| Delegated (work or school account)     | Not Supported                               |
+| Delegated (personal Microsoft account) | Not Supported                               |
+| Application                            | None                                        |
 
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /app/calls/{id}/mute
-POST /communications/calls/{id}/mute
+POST /app/calls/{id}/participants/muteAll
+POST /communications/calls/{id}/participants/muteAll
 ```
 > **Note:** The `/app` path is deprecated. Going forward, use the `/communications` path.
 
@@ -40,10 +40,11 @@ In the request body, provide a JSON object with the following parameters.
 
 | Parameter      | Type    |Description|
 |:---------------|:--------|:----------|
+|participants|String collection|The participants to be muted.|
 |clientContext|String|The client context.|
 
 ## Response
-If successful, this method returns `200 OK` response code and a [commsOperation](../resources/commsoperation.md) object in the response body.
+If successful, this method returns a `200 OK` response code and a [muteParticipantsOperation](../resources/muteParticipantsOperation.md) object in the response body.
 
 ## Example
 The following example shows how to call this API.
@@ -51,31 +52,33 @@ The following example shows how to call this API.
 ##### Request
 The following example shows the request.
 
-
 # [HTTP](#tab/http)
-<!-- { 
-  "blockType": "request", 
-  "name": "call-mute" 
+<!-- {
+  "blockType": "request",
+  "name": "participant-muteAll"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/communications/calls/57dab8b1-894c-409a-b240-bd8beae78896/mute
+POST https://graph.microsoft.com/beta/communications/calls/{id}/participants/muteAll
 Content-Type: application/json
+Content-Length: 81
 
 {
+  "participants": [
+    ""
+  ],
   "clientContext": "clientContext-value"
 }
 ```
-
 # [C#](#tab/csharp)
-[!INCLUDE [sample-code](../includes/snippets/csharp/call-mute-csharp-snippets.md)]
+[!INCLUDE [sample-code](../includes/snippets/csharp/participant-muteall-csharp-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 # [JavaScript](#tab/javascript)
-[!INCLUDE [sample-code](../includes/snippets/javascript/call-mute-javascript-snippets.md)]
+[!INCLUDE [sample-code](../includes/snippets/javascript/participant-muteall-javascript-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 # [Objective-C](#tab/objc)
-[!INCLUDE [sample-code](../includes/snippets/objc/call-mute-objc-snippets.md)]
+[!INCLUDE [sample-code](../includes/snippets/objc/participant-muteall-objc-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 ---
@@ -83,82 +86,23 @@ Content-Type: application/json
 
 ##### Response
 
-> **Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call. 
- 
-<!-- { 
-  "blockType": "response", 
-  "truncated": true, 
-  "@odata.type": "microsoft.graph.commsOperation" 
-} --> 
+> **Note:** The response object shown here might be shortened for readability. All the properties will be returned from an actual call.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.commsOperation"
+} -->
 ```http
 HTTP/1.1 200 OK
 Location: https://graph.microsoft.com/beta/communications/calls/57dab8b1-894c-409a-b240-bd8beae78896/operations/17e3b46c-f61d-4f4d-9635-c626ef18e6ad
 Content-Type: application/json
 Content-Length: 259
-```
 
-<!-- {
-  "blockType": "example",
-  "@odata.type": "microsoft.graph.commsOperation",
-  "truncated": true
-}-->
-```json
 {
-  "@odata.type": "#microsoft.graph.commsOperation",
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#commsOperation",
   "id": "17e3b46c-f61d-4f4d-9635-c626ef18e6ad",
   "status": "completed",
-  "clientContext": "clientContext-value"
-}
-```
-
-##### Notification - roster updated with participant muted
-
-```http
-POST https://bot.contoso.com/api/calls
-Content-Type: application/json
-```
-
-<!-- {
-  "blockType": "example",
-  "@odata.type": "microsoft.graph.commsNotifications"
-}-->
-```json
-{
-  "@odata.type": "#microsoft.graph.commsNotifications",
-  "value": [
-    {
-      "@odata.type": "#microsoft.graph.commsNotification",
-      "changeType": "updated",
-      "resourceUrl": "/communications/calls/57dab8b1-894c-409a-b240-bd8beae78896/participants",
-      "resourceData": [
-        {
-          "@odata.type": "#microsoft.graph.participant",
-          "id": "2765eb15-01f8-47c6-b12b-c32111a4a86f",
-          "info": {
-            "identity": {
-              "user": {
-                "displayName": "Bob",
-                "id": "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
-              }
-            },
-            "region": "westus",
-            "languageId": "en-US"
-          },
-          "mediaStreams": [
-            {
-              "mediaType": "audio",
-              "label": "main-audio",
-              "sourceId": "1",
-              "direction": "sendReceive"
-            }
-          ],
-          "isMuted": true, // will be set to true on mute
-          "isInLobby": false
-        }
-      ]
-    }
-  ]
+  "clientContext": "d45324c1-fcb5-430a-902c-f20af696537c"
 }
 ```
 
@@ -167,7 +111,7 @@ Content-Type: application/json
 <!--
 {
   "type": "#page.annotation",
-  "description": "call: mute",
+  "description": "participant: muteAll",
   "keywords": "",
   "section": "documentation",
   "tocPath": "",
